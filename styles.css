@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: url('img/4.jpg') no-repeat center center fixed; /* Aquí se establece la imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+  }
+  
+  .navbar {
+    background-color: rgba(51, 59, 51, 0.8); /* Fondo semi-transparente */
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  .navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logout-button {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .login-button, .register-button, .back-link {
+    display: block;
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  
+  .register-button {
+    background-color: #28a745; /* Verde para el botón de registrarse */
+  }
+  
+  .carousel {
+    margin: 20px 0;
+    overflow: hidden;
+  }
+  
+  .carousel-images {
+    display: flex;
+    width: 300%;
+    animation: slide 10s infinite;
+  }
+  
+  .carousel-images img {
+    width: 33.3333%;
+  }
+  
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-33.3333%); }
+    66% { transform: translateX(-66.6666%); }
+    100% { transform: translateX(0); }
+  }
+  
+  .text-blocks {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .text-block {
+    width: 45%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .text-block h2 {
+    margin-bottom: 10px;
+  }
+  
+  .text-block p {
+    line-height: 1.6;
+  }
+  
+  /* Estilo para el encabezado de login y el enlace de regreso */
+  .login-header {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+  
+  .back-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .login-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .login-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .register-button {
+    background-color: #28a745; /* Verde para el botón de registrarse */
+  }
+  
+  /* Estilo para la selección de doctor */
+  .doctor-selection {
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0); /* Fondo semi-transparente */
+    border-radius: 5px;
+  }
+  
+  .doctor-selection select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #5386e6;
+    font-size: 16px;
+  }
+  
+  /* Estilo para la agenda */
+  .agenda {
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .agenda table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .agenda th, .agenda td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .agenda th {
+    background-color: #37d37d;
+  }
+  
+  .agenda button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2a4623;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .agenda button:disabled {
+    background-color: #703434;
+    cursor: not-allowed;
+  }

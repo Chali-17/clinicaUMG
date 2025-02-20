@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-content">
+      <h1>Bienvenido a Clinica UMG</h1>
+      <a href="index.html" class="logout-button">Cerrar Sesión</a> <!-- Botón de cerrar sesión -->
+    </div>
+  </header>
+  <main>
+
+    <div style="font-size: 2em; text-align: center; margin-top: 20px;">
+        ¡La salud del pueblo es la ley suprema!
+    </div>
+      
+    <section class="doctor-selection">
+      <h2>Selecciona un Doctor</h2>
+      <select name="doctors" id="doctor-select" onchange="showAgenda()">
+        <option value="">--Selecciona un Doctor--</option>
+        <option value="doctor1">Juan Armando</option>
+        <option value="doctor2">Evelyn Reyes</option>
+        <option value="doctor3">Daniela Cruz</option>
+      </select>
+    </section>
+    
+    <section class="agenda" id="agenda" style="display:none;">
+      <h2>Agenda de Doctor</h2>
+      <table>
+        <tr>
+          <th>Hora</th>
+          <th>Disponibilidad</th>
+          <th>Acción</th>
+        </tr>
+        <tr>
+          <td>09:00 - 09:30</td>
+          <td>Disponible</td>
+          <td><button onclick="agendarCita(this)">Agendar</button></td>
+        </tr>
+        <tr>
+          <td>09:30 - 10:00</td>
+          <td>Ocupado</td>
+          <td><button disabled>Agendar</button></td>
+        </tr>
+        <tr>
+          <td>10:00 - 10:30</td>
+          <td>Disponible</td>
+          <td><button onclick="agendarCita(this)">Agendar</button></td>
+        </tr>
+        <tr>
+          <td>10:30 - 11:00</td>
+          <td>Ocupado</td>
+          <td><button disabled>Agendar</button></td>
+        </tr>
+        <tr>
+          <td>11:00 - 11:30</td>
+          <td>Disponible</td>
+          <td><button onclick="agendarCita(this)">Agendar</button></td>
+        </tr>
+        <tr>
+          <td>11:30 - 12:00</td>
+          <td>Disponible</td>
+          <td><button onclick="agendarCita(this)">Agendar</button></td>
+        </tr>
+        <tr>
+          <td>12:00 - 12:30</td>
+          <td>Ocupado</td>
+          <td><button disabled>Agendar</button></td>
+        </tr>
+        <tr>
+          <td>12:30 - 13:00</td>
+          <td>Disponible</td>
+          <td><button onclick="agendarCita(this)">Agendar</button></td>
+        </tr>
+        <tr>
+          <td>13:00 - 14:00</td>
+          <td>Hora de almuerzo</td>
+          <td><button disabled>Agendar</button></td>
+        </tr>
+        <tr>
+          <td>14:00 - 14:30</td>
+          <td>Disponible</td>
+          <td><button onclick="agendarCita(this)">Agendar</button></td>
+        </tr>
+        <tr>
+          <td>14:30 - 15:00</td>
+          <td>Ocupado</td>
+          <td><button disabled>Agendar</button></td>
+        </tr>
+      </table>
+    </section>
+  </main>
+  <script>
+    function showAgenda() {
+      var doctorSelect = document.getElementById("doctor-select");
+      var agenda = document.getElementById("agenda");
+      if (doctorSelect.value) {
+        agenda.style.display = "block";
+      } else {
+        agenda.style.display = "none";
+      }
+    }
+
+    function agendarCita(button) {
+      var row = button.parentElement.parentElement;
+      var disponibilidadCell = row.cells[1];
+      disponibilidadCell.textContent = "Ocupado";
+      button.disabled = true;
+    }
+  </script>
+</body>
+</html>
